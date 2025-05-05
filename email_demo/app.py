@@ -8,10 +8,9 @@ from flask_mail import Mail, Message
 from werkzeug.security import generate_password_hash, check_password_hash
 
 users = {
-    "bearlee0245@gmail.com": {
-        "hashed_password": "scrypt:32768:8:1$26flJx4YyElMwbtm$c710fd550a6b342ecec77e07b7fa8b5e36bb7c221e61cd69146d24e202576eff1b820393da1b48f959e77c65be22b58889dd394f3347a6d8752b03bcb7498619",
+    "user1@gmail.com": {
+        "hashed_password": "user1_hashed_password",
         "verified": False,
-        # Add other fields as needed
     }
 }
 
@@ -37,11 +36,11 @@ def signin():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-        print(f"Attempting sign in with email: {email}")  # Debug print
+        print(f"Attempting sign in with email: {email}")  
         user = users.get(email)
-        print(f"Found user: {user}")  # Debug print
+        print(f"Found user: {user}") 
         if user and check_password_hash(user['hashed_password'], password):
-            print("Password check passed!")  # Debug print
+            print("Password check passed!")  
             # Password is correct, proceed to 2FA
             code = str(random.randint(100000, 999999))
             user['code'] = code
@@ -51,7 +50,7 @@ def signin():
             flash('A 2FA code has been sent to your email!')
             return redirect(url_for('verify_2fa'))
         else:
-            print("Password check failed!")  # Debug print
+            print("Password check failed!")  
             flash('Invalid email or password')
     return render_template('signin.html')
 
