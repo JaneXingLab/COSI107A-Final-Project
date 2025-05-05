@@ -1,8 +1,10 @@
 # Environment variables
 .env
 .env.local
+.env.*.local
 .env.*
 !.env.example
+
 
 # Dependencies
 node_modules/
@@ -12,13 +14,12 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+
 # IDE
 .vscode/
 .idea/
 
 # OS
 .DS_Store
-Thumbs.db
+Thumbs.db 
 
-# macOS
-.DS_Store 
