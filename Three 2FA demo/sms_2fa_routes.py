@@ -18,8 +18,7 @@ sms_users = {
     'smsuser': {
         'password': generate_password_hash('smspass', method='pbkdf2:sha256'),
         # Store phone number in international format E.164 for Twilio
-        'phone': '+14155552671' # Example US number - REPLACE if testing
-                                # Or use '+86...' for China etc.
+        'phone': '+7819994240' 
     }
 }
 # --- End User Data ---
