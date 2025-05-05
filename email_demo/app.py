@@ -77,11 +77,5 @@ def status(email):
         return 'User not found.'
     return f"Verified: {user['verified']}"
 
-@app.route('/test-email')
-def test_email():
-    msg = Message("Test Email", recipients=["bearlee0245@gmail.com"], body="This is a test.")
-    mail.send(msg)
-    return "Test email sent!"
-
 if __name__ == '__main__':
     app.run(debug=True, port=5003)
