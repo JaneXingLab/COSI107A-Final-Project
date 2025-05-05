@@ -1,0 +1,9 @@
+Flask
+Flask-Mail
+itsdangerous
+Werkzeug
+twilio
+python-dotenv
+pyotp
+qrcode[pil]
+Pillow
